@@ -12,7 +12,7 @@ module.exports = {
       return message.channel.send('bar');
     }
 
-    message.channel.send({
+    message.reply({
       content: `Arguments: ${args}\nArguments length: ${args.length}`
     });
   }

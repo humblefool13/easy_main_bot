@@ -9,18 +9,6 @@ module.exports = {
   usage: 'To get someones - `e;avatar <mention user>`\nTo get yours - `e;avatar`',
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   args: true,
-  data: {
-    name: "avatar",
-    description: "Get your avatar or any user you mention",
-    options: [
-      {
-        name: "user",
-        description: "Other user who's avatar you want",
-        required: false,
-        type: "USER",
-      },
-    ]
-  },
   guildOnly: true,
   run: async (client, message, args) => {
     if (!message.mentions.users.size) {
@@ -40,7 +28,7 @@ module.exports = {
         )
         .setImage(message.author.displayAvatarURL({ format: 'png', dynamic: true, size: 256 }))
         .setTimestamp();
-      message.channel.send({ embeds: [avembed] });
+      message.reply({ embeds: [avembed] });
     } else {
       const urlpng = message.mentions.users.first().displayAvatarURL({ format: 'png', dynamic: true });
       const urljpg = message.mentions.users.first().displayAvatarURL({ format: 'jpg', dynamic: true });
@@ -58,7 +46,7 @@ module.exports = {
         )
         .setImage(message.mentions.users.first().displayAvatarURL({ format: 'png', dynamic: true, size: 256 }))
         .setTimestamp();
-      message.channel.send({ embeds: [avembed] });
+      message.reply({ embeds: [avembed] });
 
     }
   }

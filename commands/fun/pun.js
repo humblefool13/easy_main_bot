@@ -7,10 +7,6 @@ module.exports = {
   aliases: ['p'],
   usage: '`e;pun`',
   guildOnly: true,
-  data: {
-    name: "pun",
-    description: "Give a random pun which can't make you smile",
-  },
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   cooldown: 10,
   args: false,
@@ -429,7 +425,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed1],
-          reply: { messageReference: message.Id }
         });
         break;
       case 2:
@@ -440,7 +435,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed2],
-          reply: { messageReference: message.Id }
         });
         break;
       case 3:
@@ -451,7 +445,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed3],
-          reply: { messageReference: message.Id }
         });
         break;
       case 4:
@@ -462,7 +455,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed4],
-          reply: { messageReference: message.Id }
         });
         break;
       case 5:
@@ -473,7 +465,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed5],
-          reply: { messageReference: message.Id }
         });
         break;
       case 6:
@@ -484,7 +475,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed6],
-          reply: { messageReference: message.Id }
         });
         break;
       case 7:
@@ -495,7 +485,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed7],
-          reply: { messageReference: message.Id }
         });
         break;
       case 8:
@@ -506,7 +495,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed8],
-          reply: { messageReference: message.Id }
         });
         break;
       case 9:
@@ -517,7 +505,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed9],
-          reply: { messageReference: message.Id }
         });
         break;
       case 10:
@@ -528,7 +515,6 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed10],
-          reply: { messageReference: message.Id }
         });
         break;
       default:

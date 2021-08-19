@@ -20,7 +20,6 @@ module.exports = {
       const embeda = baseembed.setDescription("You need to check `e;help showroles`")
       return message.reply({
         embeds: [embeda],
-        reply: { messageReference: message.Id }
       });
     }
     let command = client.commands.get(args[0].toLowerCase());
@@ -29,7 +28,6 @@ module.exports = {
       const embedb = baseembed.setDescription('Error 404 : Command Not Found.\n\nUse `e;help` to get a list of all commands.')
       return message.reply({
         embeds: [embedb],
-        reply: { messageReference: message.Id }
       });
     }
 
@@ -69,12 +67,12 @@ module.exports = {
         .addField(`Command Name : ${command}`, roles)
         .setTimestamp();
 
-      return message.channel.send({
+      return message.reply({
         embeds: [roleembed]
       });
     } else {
       const embedz = baseembed.setDescription("Everyone in this server can use this command.")
-      message.channel.send({
+      message.reply({
         embeds: [embedz]
       });
     }

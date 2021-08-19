@@ -9,10 +9,6 @@ module.exports = {
   cooldown: 15,
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   usage: '`e;sky`',
-  data: {
-    name: "sky",
-    description: "Who says sky isn't wonderful?"
-  },
   run: async (client, message) => {
 
     const { createClient } = require('pexels');
@@ -40,7 +36,6 @@ module.exports = {
 
       message.reply({
         embeds: [sembed],
-        reply: { messageReference: message.Id }
       });
     });
 

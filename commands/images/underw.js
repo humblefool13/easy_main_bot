@@ -10,10 +10,6 @@ module.exports = {
   cooldown: 15,
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   usage: '`e;underw`',
-  data: {
-    name: "underwater",
-    description: "I know we all interested in life below our oceans"
-  },
   run: async (client, message) => {
 
     const { createClient } = require('pexels');
@@ -41,7 +37,6 @@ module.exports = {
 
       message.reply({
         embeds: [uwembed],
-        reply: { messageReference: message.Id }
       });
     });
 

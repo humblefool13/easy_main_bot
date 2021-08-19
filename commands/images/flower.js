@@ -9,10 +9,6 @@ module.exports = {
   description: 'We know you need some flowers',
   cooldown: 15,
   usage: '`e;flower`',
-  data: {
-    name: "flowers",
-    description: "Maybe you need some flowers!?"
-  },
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   run: async (client, message) => {
 
@@ -41,7 +37,6 @@ module.exports = {
 
       message.reply({
         embeds: [fembed],
-        reply: { messageReference: message.Id }
       });
     });
 

@@ -8,10 +8,6 @@ module.exports = {
   cooldown: 120,
   guildOnly: true,
   args: false,
-  data: {
-    name: "embed",
-    description: "Create embed in a channel",
-  },
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "MANAGE_MESSAGES", "EMBED_LINKS"],
   aliases: ['emb', 'ec'],
   description: 'Want a customized embed in any channel of your server ? Try our embed creater . \n**Can be only used by members with ADMINISTRATOR or MANAGE MESSAGES or MANAGE GUILD permissions .**\nCannot use external emojis/emotes.',
@@ -76,9 +72,6 @@ module.exports = {
         sentmsg.delete();
         if (m.content === 'cancel') {
           collector.stop();
-          return message.channel.send({
-            embeds: [baseembed.setDescription('Cancelled making the embed :+1:')]
-          });
         }
         if (counter < questions.length) {
           let collectorEmbedb = new Discord.MessageEmbed()

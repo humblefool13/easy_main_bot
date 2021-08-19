@@ -106,8 +106,7 @@ module.exports = {
       console.log(e);
     }
 
-    if (message.mentions.members.has(client.user.id) &&
-      !message.author.bot)
+    if (message.content === `<@${client.user.id}`)
       message.channel.send({ embeds: [baseembed.setDescription(`My Prefix is: **\`${prefix}\`**   , \ntype \`${prefix}help\` for more information!`)] });
 
     if (!message.content.startsWith(prefix)) return
@@ -175,7 +174,7 @@ module.exports = {
             timestamps.get(message.author.id) + cooldownAmount;
           if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000;
-            return message.channel.send({
+            return message.reply({
               embeds: [baseembed.setDescription(`Please wait ${timeLeft} more second(s) before reusing the \`${command.name}\` command.`)]
             }
 
@@ -209,7 +208,7 @@ module.exports = {
         command.run(client, message, args);
       } catch (e) {
         console.log(e);
-        message.channel.send({
+        message.reply({
           embeds: [baseembed.setDescription("Something went wrog while executing the command.")],
         })
       }

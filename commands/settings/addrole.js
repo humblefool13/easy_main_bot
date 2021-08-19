@@ -13,18 +13,6 @@ module.exports = {
   guildOnly: true,
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   args: true,
-  data: {
-    name: "command",
-    description: "Choose a command to check role usage restrictions / alter them .",
-    options: [
-      {
-        name: "role",
-        description: "k",
-        type: "ROLE",
-        requierd: true,
-      }
-    ]
-  },
   run: async (client, message, args) => {
     try {
 
@@ -35,7 +23,6 @@ module.exports = {
           const embeda = baseembed.setDescription("You need to check `e;help addrole`");
           return message.reply({
             embeds: [embeda],
-            reply: { messageReference: message.Id }
           });
         }
         const guildid = message.guild.id;
@@ -45,7 +32,6 @@ module.exports = {
           const embedb = baseembed.setDescription('Error 404 : Command Not Found.\n\nUse `e;help` to get a list of all commands.');
           return message.reply({
             embeds: [embedb],
-            reply: { messageReference: message.Id }
           })
         }
 
@@ -63,7 +49,6 @@ module.exports = {
             const embedc = baseembed.setDescription("This role is already authorized to use this command.")
             return message.reply({
               embeds: [embedc],
-              reply: { messageReference: message.Id }
             });
           } else {
             await new roleperms({
@@ -74,7 +59,6 @@ module.exports = {
             const embedd = baseembed.setDescription("Role successfully authorized to use " + command + " command.")
             return message.reply({
               embeds: [embedd],
-              reply: { messageReference: message.Id }
             });
 
           }
@@ -87,7 +71,6 @@ module.exports = {
             embede = baseembed.setDescription("Please provide a valid role ID of this server .")
             return message.reply({
               embeds: [embede],
-              reply: { messageReferece: message.Id }
             });
           }
 
@@ -100,7 +83,6 @@ module.exports = {
             const embedf = baseembed.setDescription("This role is already authorized to use this command.")
             return message.reply({
               embeds: [embedf],
-              reply: { messageReference: message.Id }
             })
           } else {
             await new roleperms({
@@ -111,24 +93,13 @@ module.exports = {
             const embedg = baseembed.setDescription("Role successfully authorized to use " + command + " command.")
             return message.reply({
               embeds: [embedg],
-              reply: { messageReference: message.Id }
             });
-
           }
-
-
         }
-
-
-
-
-
-
       } else {
         const embedh = baseembed.setDescription("Sorry , you need **ADMINISTRATOR** or **MANAGE ROLES** permission to use this command.")
         message.reply({
           embeds: [embedh],
-          reply: { messageReference: message.Id }
         })
       }
     } catch (e) {

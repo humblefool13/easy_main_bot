@@ -8,10 +8,6 @@ module.exports = {
   guildOnly: true,
   description: 'Gets you a random dog image .',
   cooldown: 15,
-  data: {
-    name: "dogs",
-    description: "Get a random dog image"
-  },
   usage: '`e;dog`',
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   run: async (client, message) => {
@@ -41,7 +37,6 @@ module.exports = {
 
       message.reply({
         embeds: [dogembed],
-        reply: { messageReference: message.Id }
       });
     });
 

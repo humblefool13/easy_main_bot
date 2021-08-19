@@ -23,7 +23,6 @@ module.exports = {
           const embeda = baseembed.setDescription("You need to check `e;help addrole`");
           return message.reply({
             embeds: [embeda],
-            reply: { messageReference: message.Id }
           });
         }
         const guildid = message.guild.id;
@@ -33,7 +32,6 @@ module.exports = {
           const embedb = baseembed.setDescription('Error 404 : Command Not Found.\n\nUse `e;help` to get a list of all commands.');
           return message.reply({
             embeds: [embedb],
-            reply: { messageReference: message.Id }
           })
         }
 
@@ -51,7 +49,6 @@ module.exports = {
             const embedc = baseembed.setDescription("This role was never authorized to use the command.")
             return message.reply({
               embeds: [embedc],
-              reply: { messageReference: message.Id }
             });
 
           } else {
@@ -63,7 +60,6 @@ module.exports = {
             const embedd = baseembed.setDescription("The role is successfully deauthorized from using the " + command + " command.")
             return message.reply({
               embeds: [embedd],
-              reply: { messageReference: message.Id }
             });
           }
 
@@ -73,7 +69,6 @@ module.exports = {
             const embede = baseembed.setDescription("Please provide a valid role ID of this server .")
             return message.reply({
               embeds: [embede],
-              reply: { messageReference: message.Id }
             });
           }
 
@@ -86,7 +81,6 @@ module.exports = {
             const embedf = baseembed.setDescription("This role was never authorized to use the command.")
             return message.reply({
               embeds: [embedf],
-              reply: { messageReference: message.Id }
             });
 
           } else {
@@ -98,7 +92,6 @@ module.exports = {
             const embedg = baseembed.setDescription("The role is successfully deauthorized from using the " + command + " command.")
             return message.reply({
               embeds: [embedg],
-              reply: { messageReference: message.Id }
             });
           }
 
@@ -110,7 +103,6 @@ module.exports = {
         const embedh = baseembed.setDescription("Sorry , you need **ADMINISTRATOR** or **MANAGE ROLES** permission to use this command.")
         message.reply({
           embeds: [embedh],
-          reply: { messageReference: message.Id }
         })
       }
 

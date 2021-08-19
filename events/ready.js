@@ -14,6 +14,6 @@ module.exports = {
     console.log(`Have ${users} users .`);
     client.user.setActivity(`e;help`, { type: 'LISTENING' });
     console.log(client.guilds.cache.map(g => g.name + " = " + g.memberCount));
-    await client.application?.fetch();
+    await client.application ?.fetch();
   },
 };

@@ -17,7 +17,7 @@ module.exports = {
         .setColor(color)
         .setTimestamp()
         .setDescription(`<@${message.author.id}> Woah <a:fun1:872887524652118056> , wait a moment , you have a game already going on , how about you finish that first before starting another.`);
-      return message.channel.send({
+      return message.reply({
         embeds: [completeGame]
       });
     };
@@ -74,7 +74,7 @@ module.exports = {
           .setDescription("WORD   -    " + showString + "\n" + "LIVES - " + lives[counter] + "\n" + "MISSES - " + missesString + "\n" + figures[counter])
           .setColor(color)
           .setFooter("Goodluck!!!");
-        let sent2 = await message.channel.send({
+        let sent2 = await message.reply({
           embeds: [embed2],
         });
         const filter2 = m => m.author.id === message.author.id;
@@ -144,7 +144,7 @@ module.exports = {
       });
     } catch (e) {
       console.log(e.message);
-      message.channel.send({
+      message.reply({
         embeds: [new Discord.MessageEmbed().setColr(color).setTimestamp().setDescription("Oops ! something went wrong while building your game , please try again later.\nSorry for inconvenience.")]
       });
     };

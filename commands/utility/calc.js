@@ -202,8 +202,8 @@ module.exports = {
     })
 
     collector.on("end", async () => {
-      sent.delete().catch((e)=>{});
-      message.delete().catch((e)=>{});
+      sent.delete().catch((e) => { });
+      message.delete().catch((e) => { });
     })
 
 

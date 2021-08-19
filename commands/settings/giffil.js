@@ -13,23 +13,6 @@ module.exports = {
   description: 'Provide filter options for the GIFs sent to server in `e;gif` command . Can be only used by members with **ADMINISTRATOR** permissions ',
   cooldown: 0,
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
-  data: {
-    name: "gif_filter",
-    description: "Set a filter over GIFs you recieve in server while using GIF comamnd or see how command works",
-    options: [
-      {
-        name: "filter",
-        description: "Choose the filter",
-        type: "STRING",
-        required: false,
-      },
-      {
-        name: "help",
-        description: "Get to know how to set GIf filters.",
-        type: "BOOLEAN",
-      }
-    ],
-  },
   usage: '`e;giffil <filter chosen>`',
   guildOnly: true,
   run: async (client, message, args) => {
@@ -39,7 +22,6 @@ module.exports = {
         const embedz = baseembed.setDescription('Only Users with **ADMINISTRATOR** permission can use this command.')
         return message.reply({
           embeds: [embedz],
-          reply: { messageReference: message.Id }
         });
       } else {
         if (!args || args.length === 0) {
@@ -64,7 +46,6 @@ module.exports = {
               .setTimestamp();
             message.reply({
               embeds: [filEmbed],
-              reply: { messageReference: message.Id }
             });
           } else {
             const filEmbed = new Discord.MessageEmbed()
@@ -80,7 +61,6 @@ module.exports = {
               .setTimestamp();
             message.reply({
               embeds: [filEmbed],
-              reply: { messageReference: message.Id }
             })
 
           };
@@ -88,7 +68,6 @@ module.exports = {
           const embeda = baseembed.setDescription("Please do not put extra words other than filter choice . \n Like for high option , type `e;giffil high`");
           return message.reply({
             embeds: [embeda],
-            reply: { messageReference: message.Id }
           });
         } else if (args.length === 1) {
           const filnew = args[0];
@@ -108,21 +87,18 @@ module.exports = {
               const embedb = baseembed.setDescription('Settings Updated Succesfully !!!\nYou can change them anytime.')
               message.reply({
                 embeds: [embedb],
-                reply: { messageReference: message.Id }
               });
 
             } else {
               const embede = baseembed.setDescription('Settings Saved Succesfully !!!\nYou can change them anytime.')
               message.reply({
                 embeds: [embede],
-                reply: { messageReference: message.Id }
               });
             }
           } else {
             const embedf = baseembed.setDescription("Please choose correct option . \n like for high option , type `e;giffil high`")
             message.reply({
               embeds: [embedf],
-              reply: { messageReference: message.Id }
             });
           }
         }

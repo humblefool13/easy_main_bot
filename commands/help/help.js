@@ -8,10 +8,6 @@ module.exports = {
   aliases: ['commands', 'h'],
   guildOnly: true,
   usage: '`e;help <command name>`',
-  data: {
-    name: "help",
-    description: "Help relating to usage of bot"
-  },
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   cooldown: 20,
   run: async (client, message, args) => {
@@ -29,6 +25,8 @@ module.exports = {
 
           { name: 'Utility commands :tools: : ', value: ' `calc` , `embed`' },
 
+          { name: 'Minigames <:games:872888674835107920> : ', value: '`hangman`' },
+
           { name: 'Miscellaneous :woozy_face: :', value: '`argstest` , `avatar`' },
 
           { name: 'Settings :gear: :', value: '`giffil` , `addrole` , `delrole` , `showroles`' },
@@ -39,7 +37,6 @@ module.exports = {
         .setFooter('For help in specific command try the help command with command name , like , `e;help <command name>`');
       message.reply({
         embeds: [helpembed],
-        reply: { messageReference: message.Id }
       });
     } else {
       const name = args[0].toLowerCase();
@@ -95,7 +92,6 @@ module.exports = {
         .setTimestamp();
       message.reply({
         embeds: [spechelpembed],
-        reply: { messageReference: message.Id }
       });
     }
 

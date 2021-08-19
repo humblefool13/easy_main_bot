@@ -9,10 +9,6 @@ module.exports = {
   description: 'Gets you a random kitten image .',
   cooldown: 15,
   usage: '`e;kitten`',
-  data: {
-    name: "kitten",
-    description: "Get a random kitten image"
-  },
   permissions: ["VIEW_CHANNEL", "SEND_MESSAGES", "READ_MESSAGE_HISTORY", "EMBED_LINKS"],
   run: async (client, message) => {
 
@@ -41,7 +37,6 @@ module.exports = {
 
       message.reply({
         embeds: [kitembed],
-        reply: { messageReference: message.Id }
       });
     });
 

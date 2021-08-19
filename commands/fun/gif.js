@@ -30,17 +30,21 @@ module.exports = {
         const response = await Fetch(url);
         const result = await response.json();
         const index = Math.floor(Math.random() * result.results.length);
-        message.channel.send(result.results[index].url);
+        message.reply({
+          content: result.results[index].url
+        });
       } else {
         let url = `https://api.tenor.com/v1/search?q=${keyword}&key=${process.env['tenor_key']}&limit=10&contentfilter=medium`;
         const response = await Fetch(url);
         const result = await response.json();
         const index = Math.floor(Math.random() * result.results.length);
-        message.channel.send(result.results[index].url);
+        message.reply({
+          content: result.results[index].url
+        });
       }
 
     } catch (e) {
-      return message.channel.send({
+      return message.reply({
         embeds: [new Discord.MessageEmbed().setColor(color).setTimestamp().setDescription("<@" + message.author.id + "> , No results found for the search : " + keyword)]
       })
     }
