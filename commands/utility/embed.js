@@ -45,7 +45,7 @@ module.exports = {
         })
 
       const collectorEmbed = new Discord.MessageEmbed()
-        .setTitle('EASY embed creater :')
+        .setTitle('EASY embed creator :')
         .setColor(color)
         .setDescription(questions[counter++])
         .setFooter('Type \'skip\' to leave this field empty or \'cancel\' to stop making the embed .')
@@ -57,10 +57,13 @@ module.exports = {
         sentmsg.delete();
         if (m.content === 'cancel') {
           collector.stop();
+          return message.channel.send({
+            embeds: [baseembed.setDescription('Cancelled making the embed :+1:')]
+          });
         }
         if (counter < questions.length) {
           let collectorEmbedb = new Discord.MessageEmbed()
-            .setTitle('EASY embed creater :')
+            .setTitle('EASY embed creator :')
             .setColor(color)
             .setDescription(questions[counter++])
             .setFooter('Type \'skip\' to leave this field empty or \'cancel\' to stop making the embed .')
