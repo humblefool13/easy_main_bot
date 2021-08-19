@@ -31,7 +31,10 @@ module.exports = {
         const result = await response.json();
         const index = Math.floor(Math.random() * result.results.length);
         message.reply({
-          content: result.results[index].url
+          content: result.results[index].url,
+          allowedMentions: {
+            "parse": []
+          }
         });
       } else {
         let url = `https://api.tenor.com/v1/search?q=${keyword}&key=${process.env['tenor_key']}&limit=10&contentfilter=medium`;
@@ -39,7 +42,10 @@ module.exports = {
         const result = await response.json();
         const index = Math.floor(Math.random() * result.results.length);
         message.reply({
-          content: result.results[index].url
+          content: result.results[index].url,
+          allowedMentions: {
+            "parse": []
+          }
         });
       }
 

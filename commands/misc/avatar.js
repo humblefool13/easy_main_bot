@@ -28,7 +28,12 @@ module.exports = {
         )
         .setImage(message.author.displayAvatarURL({ format: 'png', dynamic: true, size: 256 }))
         .setTimestamp();
-      message.reply({ embeds: [avembed] });
+      message.reply({
+        embeds: [avembed],
+        allowedMentions: {
+          "parse": []
+        }
+      });
     } else {
       const urlpng = message.mentions.users.first().displayAvatarURL({ format: 'png', dynamic: true });
       const urljpg = message.mentions.users.first().displayAvatarURL({ format: 'jpg', dynamic: true });
@@ -46,7 +51,12 @@ module.exports = {
         )
         .setImage(message.mentions.users.first().displayAvatarURL({ format: 'png', dynamic: true, size: 256 }))
         .setTimestamp();
-      message.reply({ embeds: [avembed] });
+      message.reply({
+        embeds: [avembed],
+        allowedMentions: {
+          "parse": []
+        }
+      });
 
     }
   }

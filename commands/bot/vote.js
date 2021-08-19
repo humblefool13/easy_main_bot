@@ -19,7 +19,10 @@ module.exports = {
       .setFooter('Thanks for voting <3 !')
       .setTimestamp();
     message.channel.send({
-      embeds: [embed]
+      embeds: [embed],
+      allowedMentions: {
+        "parse": []
+      }
     });
   }
 }

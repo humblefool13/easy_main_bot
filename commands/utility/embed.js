@@ -15,21 +15,6 @@ module.exports = {
     let permsreq = [];
     if (message.member.permissionsIn(message.channel).has("ADMINISTRATOR") || message.member.permissionsIn(message.channel).has("MANAGE_MESSAGES") || message.member.permissionsIn(message.channel).has("MANAGE_GUILD")) {
 
-
-      if (!message.channel.permissionsFor(client.user).has("VIEW_CHANNEL")) permsreq.push(this.permissions[0]);
-      if (!message.channel.permissionsFor(client.user).has("SEND_MESSAGES")) permsreq.push(this.permissions[1]);
-      if (!message.channel.permissionsFor(client.user).has("READ_MESSAGE_HISTORY")) permsreq.push(this.permissions[2]);
-      if (!message.channel.permissionsFor(client.user).has("MANAGE_MESSAGES")) permsreq.push(this.permissions[3]);
-
-      if (permsreq.length) {
-        let permsname = permsreq.join("\n➟ ");
-        permsname = "➟ " + permsname;
-        const missing = baseembed.setDescription("Missing permissions : \n" + permsname);
-        return message.channel.send({
-          embeds: [missing]
-        });
-      };
-
       let sentid = "";
 
       let allanswers = true;

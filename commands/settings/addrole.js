@@ -23,6 +23,9 @@ module.exports = {
           const embeda = baseembed.setDescription("You need to check `e;help addrole`");
           return message.reply({
             embeds: [embeda],
+            allowedMentions: {
+              "parse": []
+            }
           });
         }
         const guildid = message.guild.id;
@@ -32,6 +35,9 @@ module.exports = {
           const embedb = baseembed.setDescription('Error 404 : Command Not Found.\n\nUse `e;help` to get a list of all commands.');
           return message.reply({
             embeds: [embedb],
+            allowedMentions: {
+              "parse": []
+            }
           })
         }
 
@@ -49,6 +55,9 @@ module.exports = {
             const embedc = baseembed.setDescription("This role is already authorized to use this command.")
             return message.reply({
               embeds: [embedc],
+              allowedMentions: {
+                "parse": []
+              }
             });
           } else {
             await new roleperms({
@@ -59,6 +68,9 @@ module.exports = {
             const embedd = baseembed.setDescription("Role successfully authorized to use " + command + " command.")
             return message.reply({
               embeds: [embedd],
+              allowedMentions: {
+                "parse": []
+              }
             });
 
           }
@@ -71,6 +83,9 @@ module.exports = {
             embede = baseembed.setDescription("Please provide a valid role ID of this server .")
             return message.reply({
               embeds: [embede],
+              allowedMentions: {
+                "parse": []
+              }
             });
           }
 
@@ -83,6 +98,9 @@ module.exports = {
             const embedf = baseembed.setDescription("This role is already authorized to use this command.")
             return message.reply({
               embeds: [embedf],
+              allowedMentions: {
+                "parse": []
+              }
             })
           } else {
             await new roleperms({
@@ -93,6 +111,9 @@ module.exports = {
             const embedg = baseembed.setDescription("Role successfully authorized to use " + command + " command.")
             return message.reply({
               embeds: [embedg],
+              allowedMentions: {
+                "parse": []
+              }
             });
           }
         }
@@ -100,12 +121,18 @@ module.exports = {
         const embedh = baseembed.setDescription("Sorry , you need **ADMINISTRATOR** or **MANAGE ROLES** permission to use this command.")
         message.reply({
           embeds: [embedh],
+          allowedMentions: {
+            "parse": []
+          }
         })
       }
     } catch (e) {
       console.log(e);
       message.reply({
-        content: "Something went wrong authorizing the role."
+        content: "Something went wrong authorizing the role.",
+        allowedMentions: {
+          "parse": []
+        }
       })
     }
   }//run

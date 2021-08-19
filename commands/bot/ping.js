@@ -18,7 +18,10 @@ module.exports = {
       .setTimestamp();
 
     message.channel.send({
-      embeds: [embed]
+      embeds: [embed],
+      allowedMentions: {
+        "parse": []
+      }
     });
 
   }

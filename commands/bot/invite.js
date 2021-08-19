@@ -14,7 +14,10 @@ module.exports = {
       .setDescription(`To invite the bot to your server , [click here](https://discord.com/oauth2/authorize?client_id=844656815627436112&scope=bot+applications.commands&permissions=388160) !!!`)
       .setTimestamp();
     message.channel.send({
-      embeds: [embed]
+      embeds: [embed],
+      allowedMentions: {
+        "parse": []
+      }
     });
   }//run
 };//module

@@ -36,6 +36,9 @@ module.exports = {
 
       message.reply({
         embeds: [sembed],
+        allowedMentions: {
+          "parse": []
+        }
       });
     });
 

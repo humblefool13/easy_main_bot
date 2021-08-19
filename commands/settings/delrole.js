@@ -23,6 +23,9 @@ module.exports = {
           const embeda = baseembed.setDescription("You need to check `e;help addrole`");
           return message.reply({
             embeds: [embeda],
+            allowedMentions: {
+              "parse": []
+            }
           });
         }
         const guildid = message.guild.id;
@@ -32,6 +35,9 @@ module.exports = {
           const embedb = baseembed.setDescription('Error 404 : Command Not Found.\n\nUse `e;help` to get a list of all commands.');
           return message.reply({
             embeds: [embedb],
+            allowedMentions: {
+              "parse": []
+            }
           })
         }
 
@@ -49,6 +55,9 @@ module.exports = {
             const embedc = baseembed.setDescription("This role was never authorized to use the command.")
             return message.reply({
               embeds: [embedc],
+              allowedMentions: {
+                "parse": []
+              }
             });
 
           } else {
@@ -60,6 +69,9 @@ module.exports = {
             const embedd = baseembed.setDescription("The role is successfully deauthorized from using the " + command + " command.")
             return message.reply({
               embeds: [embedd],
+              allowedMentions: {
+                "parse": []
+              }
             });
           }
 
@@ -69,6 +81,9 @@ module.exports = {
             const embede = baseembed.setDescription("Please provide a valid role ID of this server .")
             return message.reply({
               embeds: [embede],
+              allowedMentions: {
+                "parse": []
+              }
             });
           }
 
@@ -81,6 +96,9 @@ module.exports = {
             const embedf = baseembed.setDescription("This role was never authorized to use the command.")
             return message.reply({
               embeds: [embedf],
+              allowedMentions: {
+                "parse": []
+              }
             });
 
           } else {
@@ -92,6 +110,9 @@ module.exports = {
             const embedg = baseembed.setDescription("The role is successfully deauthorized from using the " + command + " command.")
             return message.reply({
               embeds: [embedg],
+              allowedMentions: {
+                "parse": []
+              }
             });
           }
 
@@ -103,12 +124,20 @@ module.exports = {
         const embedh = baseembed.setDescription("Sorry , you need **ADMINISTRATOR** or **MANAGE ROLES** permission to use this command.")
         message.reply({
           embeds: [embedh],
+          allowedMentions: {
+            "parse": []
+          }
         })
       }
 
     } catch (e) {
       console.log(e);
-      message.reply({ content: "Something went wrong while removing the role permission." });
+      message.reply({
+        content: "Something went wrong while removing the role permission.",
+        allowedMentions: {
+          "parse": []
+        }
+      });
     }
 
 

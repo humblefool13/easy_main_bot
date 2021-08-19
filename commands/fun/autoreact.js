@@ -33,6 +33,9 @@ module.exports = {
           return message.reply({
             embeds: [embeda],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         } else {
           await autoreact.deleteOne({
@@ -43,6 +46,9 @@ module.exports = {
             return message.reply({
               embeds: [embedb],
               failIfNotExists: false,
+              allowedMentions: {
+                "parse": []
+              }
             });
           })
         }
@@ -51,6 +57,9 @@ module.exports = {
       if (!emojis.length) return message.reply({
         embeds: [baseembed.setDescription("Run that command again but this time give me an emoji/emote as well .")],
         failIfNotExists: false,
+        allowedMentions: {
+          "parse": []
+        }
       });
 
       const emoji = emojis[0];
@@ -60,6 +69,9 @@ module.exports = {
         return message.reply({
           embeds: [embede],
           failIfNotExists: false,
+          allowedMentions: {
+            "parse": []
+          }
         });
       };
       message.react(emojiId).catch(e => {
@@ -68,12 +80,18 @@ module.exports = {
           message.reply({
             embeds: [embedf],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         } else {
           const embedg = baseembed.setDescription("Invalid emoji/emote .\nCheck `e;help autoreact`");
           return message.reply({
             embeds: [embedg],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         }
       });
@@ -93,6 +111,9 @@ module.exports = {
           message.reply({
             embeds: [embedh],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         } else {
           await autoreact.updateOne({
@@ -105,6 +126,9 @@ module.exports = {
           return message.reply({
             embeds: [embedi],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         };
       } else if (emoji.type === "Discord Emoji" && emoji.animated === false) {
@@ -123,6 +147,9 @@ module.exports = {
           message.reply({
             embeds: [embedh],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         } else {
           await autoreact.updateOne({
@@ -135,6 +162,9 @@ module.exports = {
           return message.reply({
             embeds: [embedi],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         };
       } else if (emoji.type === "Default Emoji") {
@@ -153,6 +183,9 @@ module.exports = {
           message.reply({
             embeds: [embedh],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         } else {
           await autoreact.updateOne({
@@ -165,6 +198,9 @@ module.exports = {
           return message.reply({
             embeds: [embedi],
             failIfNotExists: false,
+            allowedMentions: {
+              "parse": []
+            }
           });
         };
       }

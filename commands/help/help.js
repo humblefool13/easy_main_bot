@@ -37,6 +37,9 @@ module.exports = {
         .setFooter('For help in specific command try the help command with command name , like , `e;help <command name>`');
       message.reply({
         embeds: [helpembed],
+        allowedMentions: {
+          "parse": []
+        }
       });
     } else {
       const name = args[0].toLowerCase();
@@ -49,7 +52,9 @@ module.exports = {
           .setDescription("That command does not exist .\nCheck `e;help` to see a full list of commands.");
         return message.reply({
           embeds: [invaled],
-          reply: { messageReference: message.Id }
+          allowedMentions: {
+            "parse": []
+          }
         });
       }
 
@@ -92,6 +97,9 @@ module.exports = {
         .setTimestamp();
       message.reply({
         embeds: [spechelpembed],
+        allowedMentions: {
+          "parse": []
+        }
       });
     }
 

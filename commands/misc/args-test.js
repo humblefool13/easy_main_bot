@@ -13,7 +13,10 @@ module.exports = {
     }
 
     message.reply({
-      content: `Arguments: ${args}\nArguments length: ${args.length}`
+      content: `Arguments: ${args}\nArguments length: ${args.length}`,
+      allowedMentions: {
+        "parse": []
+      }
     });
   }
 };

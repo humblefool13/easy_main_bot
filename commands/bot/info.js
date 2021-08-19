@@ -62,7 +62,10 @@ module.exports = {
       );
 
     message.channel.send({
-      embeds: [infoembed]
+      embeds: [infoembed],
+      allowedMentions: {
+        "parse": []
+      }
     });
 
 

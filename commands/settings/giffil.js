@@ -22,6 +22,9 @@ module.exports = {
         const embedz = baseembed.setDescription('Only Users with **ADMINISTRATOR** permission can use this command.')
         return message.reply({
           embeds: [embedz],
+          allowedMentions: {
+            "parse": []
+          }
         });
       } else {
         if (!args || args.length === 0) {
@@ -46,6 +49,9 @@ module.exports = {
               .setTimestamp();
             message.reply({
               embeds: [filEmbed],
+              allowedMentions: {
+                "parse": []
+              }
             });
           } else {
             const filEmbed = new Discord.MessageEmbed()
@@ -61,6 +67,9 @@ module.exports = {
               .setTimestamp();
             message.reply({
               embeds: [filEmbed],
+              allowedMentions: {
+                "parse": []
+              }
             })
 
           };
@@ -68,6 +77,9 @@ module.exports = {
           const embeda = baseembed.setDescription("Please do not put extra words other than filter choice . \n Like for high option , type `e;giffil high`");
           return message.reply({
             embeds: [embeda],
+            allowedMentions: {
+              "parse": []
+            }
           });
         } else if (args.length === 1) {
           const filnew = args[0];
@@ -87,18 +99,27 @@ module.exports = {
               const embedb = baseembed.setDescription('Settings Updated Succesfully !!!\nYou can change them anytime.')
               message.reply({
                 embeds: [embedb],
+                allowedMentions: {
+                  "parse": []
+                }
               });
 
             } else {
               const embede = baseembed.setDescription('Settings Saved Succesfully !!!\nYou can change them anytime.')
               message.reply({
                 embeds: [embede],
+                allowedMentions: {
+                  "parse": []
+                }
               });
             }
           } else {
             const embedf = baseembed.setDescription("Please choose correct option . \n like for high option , type `e;giffil high`")
             message.reply({
               embeds: [embedf],
+              allowedMentions: {
+                "parse": []
+              }
             });
           }
         }

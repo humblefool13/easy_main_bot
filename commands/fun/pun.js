@@ -425,6 +425,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed1],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 2:
@@ -435,6 +438,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed2],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 3:
@@ -445,6 +451,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed3],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 4:
@@ -455,6 +464,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed4],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 5:
@@ -465,6 +477,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed5],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 6:
@@ -475,6 +490,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed6],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 7:
@@ -485,6 +503,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed7],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 8:
@@ -495,6 +516,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed8],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 9:
@@ -505,6 +529,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed9],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       case 10:
@@ -515,6 +542,9 @@ module.exports = {
           .setTimestamp();
         message.reply({
           embeds: [embed10],
+          allowedMentions: {
+            "parse": []
+          }
         });
         break;
       default:

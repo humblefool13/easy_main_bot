@@ -37,6 +37,9 @@ module.exports = {
 
       message.reply({
         embeds: [pupembed],
+        allowedMentions: {
+          "parse": []
+        }
       });
     });
 

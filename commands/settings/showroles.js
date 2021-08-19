@@ -20,6 +20,9 @@ module.exports = {
       const embeda = baseembed.setDescription("You need to check `e;help showroles`")
       return message.reply({
         embeds: [embeda],
+        allowedMentions: {
+        "parse": []
+      }
       });
     }
     let command = client.commands.get(args[0].toLowerCase());
@@ -28,6 +31,9 @@ module.exports = {
       const embedb = baseembed.setDescription('Error 404 : Command Not Found.\n\nUse `e;help` to get a list of all commands.')
       return message.reply({
         embeds: [embedb],
+        allowedMentions: {
+        "parse": []
+      }
       });
     }
 
@@ -68,12 +74,18 @@ module.exports = {
         .setTimestamp();
 
       return message.reply({
-        embeds: [roleembed]
+        embeds: [roleembed],
+        allowedMentions: {
+        "parse": []
+      }
       });
     } else {
       const embedz = baseembed.setDescription("Everyone in this server can use this command.")
       message.reply({
-        embeds: [embedz]
+        embeds: [embedz],
+        allowedMentions: {
+        "parse": []
+      }
       });
     }
 
