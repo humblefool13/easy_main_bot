@@ -5,7 +5,7 @@ const giffildb = require('../../models/giffilmodel');
 require("mongoose");
 const { color } = require("../../config.json");
 const embed = new Discord.MessageEmbed().setColor(color).setTimestamp()
-const notfound = embed.setDescription("No results for this search , try searching something different .")
+
 
 module.exports = {
   name: 'gif',
@@ -30,8 +30,10 @@ module.exports = {
         const response = await Fetch(url);
         const result = await response.json();
         const index = Math.floor(Math.random() * result.results.length);
+        const gif = result.results[index].media[0].gif.url;
+        const finalEmbed = embed.setDescription(`GIF for **${keyword}**`).setImage(gif).setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL({ format: 'png', dynamic: true }));
         message.reply({
-          content: result.results[index].url,
+          embeds: [finalEmbed],
           allowedMentions: {
             "parse": []
           }
@@ -41,8 +43,10 @@ module.exports = {
         const response = await Fetch(url);
         const result = await response.json();
         const index = Math.floor(Math.random() * result.results.length);
+        const gif = result.results[index].media[0].gif.url;
+        const finalEmbed = embed.setImage(gif).setDescription(`GIF for **${keyword}**`).setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL({ format: 'png', dynamic: true }));
         message.reply({
-          content: result.results[index].url,
+          embeds: [finalEmbed],
           allowedMentions: {
             "parse": []
           }
@@ -51,7 +55,7 @@ module.exports = {
 
     } catch (e) {
       return message.reply({
-        embeds: [new Discord.MessageEmbed().setColor(color).setTimestamp().setDescription("<@" + message.author.id + "> , No results found for the search : " + keyword)]
+        embeds: [embed.setDescription("<@" + message.author.id + "> , No results found for the search : " + keyword)]
       })
     }
 

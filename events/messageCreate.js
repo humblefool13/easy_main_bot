@@ -106,8 +106,7 @@ module.exports = {
       console.log(e);
     }
 
-    if (message.content === `<@${client.user.id}`)
-      message.channel.send({ embeds: [baseembed.setDescription(`My Prefix is: **\`${prefix}\`**   , \ntype \`${prefix}help\` for more information!`)] });
+    if (message.content === `<@!${client.user.id}>` || message.content === `<@${client.user.id}>`) message.channel.send({ embeds: [baseembed.setDescription(`My Prefix is: **\`${prefix}\`**   , \ntype \`${prefix}help\` for more information!`)] });
 
     if (!message.content.startsWith(prefix)) return
 

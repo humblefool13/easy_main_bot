@@ -87,7 +87,7 @@ module.exports = {
             time: 60000,
           });
           if (m.content.length === 1 && m.content.toLowerCase().charCodeAt(0) >= 97 && m.content.toLowerCase().charCodeAt(0) <= 122) {
-            m.delete();
+            m.delete().catch((e)=>{});
             const char = m.content.toLowerCase();
             if (word.includes(char) && !rightsArray.includes(char)) {
               rightsArray.push(char);
@@ -123,17 +123,17 @@ module.exports = {
         collector2.on("end", () => {
           players.delete(message.author.id);
           if (rights === 7) {
-            sent2.delete();
+            sent2.delete().catch((e)=>{});
             message.channel.send({
               embeds: [winEmbed],
             });
           } else if (wrongs === 5) {
-            sent2.delete();
+            sent2.delete().catch((e)=>{});
             message.channel.send({
               embeds: [loseEmbed],
             });
           } else {
-            sent2.delete();
+            sent2.delete().catch((e)=>{});
             message.channel.send({
               embeds: [timeoutEmbed],
             })
